@@ -1,0 +1,69 @@
+<head id="Head1">
+    <title>Óculos Menina Flor</title>
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,400i" rel="stylesheet">
+    <link href="css/StoreGeneral.min.css" rel="stylesheet">            
+    <link href="css/Site.min.css" rel="stylesheet">  
+    <link href="css/Site.Master.css" rel="stylesheet">           
+    <link href="css/font-awesome.min.css" rel="stylesheet">            
+    <link href="css/bootstrap.min.css" rel="stylesheet">                       
+    <link href="css/jquery.bxslider.min.css" rel="stylesheet">            
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet">               
+    <link href="css/slick.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">     
+    <link href="css/slick-theme.css" rel="stylesheet">            
+    <script type="text/javascript" src="js/jquery-utils.min.js"></script>
+    <script type="text/javascript" src="js/clmtrackr.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+<body class="desktop escolha-receita" >
+<div></div>
+    <a href="javascript:void(0)" onclick="javascript: abrirCalculoDP()" id="btnDP">Calcular minha DP (OPCIONAL)</a>
+
+    <div class="modal fade in" id="modalCalculoDP" tabindex="-1" role="dialog" aria-labelledby="modalCalculoDPLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 700px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCalculoDPLabel">
+                        Siga as instruções para realizar a medida da DP corretamente :)
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body" style="min-height: 400px;">
+                    <div id="dvTakePhoto" class="row">
+                        <div id="dvWebCam" class="col-md-8" style="display: block;">
+                            <video id="video" autoplay="" width="416" height="312" style="width: 416px; height: 312px;"></video>
+                        </div>
+                        <div id="dvCalculateDP" class="col-md-8" style="display: none; min-height: 342px;">
+                            <canvas id="image" style="width: 416px; height: 312px;" width="416" height="312"></canvas>
+                            <canvas id="card" width="416" height="312" style="width: 416px; height: 312px;"></canvas>
+                            <canvas id="eyes" width="416" height="312" style="width: 416px; height: 312px;"></canvas>
+                            <p>Tente manter o meio do cartão na ponta do seu nariz</p>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- <p class="dpTextModel">Siga o Modelo Proposto!</p> -->
+                            <img src="img/modelo_dp.jpg" class="img-responsive" alt="Modelo para calcular a DP" title="Siga o modelo para calcular a DP">
+                            <br />
+                            
+                            <div id="foto" style="display: block;">
+                                <button type="button" id="snap" class="btn btn-success btn-block" onclick="tirarFoto()">Clique para tirar foto</button>
+                            </div>
+
+                            <div id="selecionaFoto" style="display: none;">
+                                <button type="button" id="btnSelecionaCartao" class="btn btn-primary btn-block" onclick="activeCartao()">1 - Selecionar o cartao</button>
+                                <br>
+                                <button type="button" id="btnMarqueOlhos" class="btn btn-info btn-block" onclick="activeOlho()">2 - Marque os olhos</button>
+                                <br>
+                                <button type="button" id="btnCalcularDP" class="btn btn-success btn-block" onclick="verificaDP()">3 - Calcular minha DP</button>
+                                <br>
+                                <button type="button" id="btnTirarOutraFoto" class="btn btn-danger btn-block" onclick="resetFoto()">Tirar outra foto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
